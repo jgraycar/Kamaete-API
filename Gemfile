@@ -14,6 +14,15 @@ gem 'puma', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Use Devise Token Auth for token based authentication
+gem 'devise_token_auth'
+
+
+# Enable OmniAuth login through Facebook & Google
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

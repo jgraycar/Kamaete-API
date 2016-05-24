@@ -23,6 +23,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+# Enable Cross-Origin Resource Sharing (CORS)
+gem 'rack-cors'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/lynndylanhurley/devise_token_auth.git
+  revision: 1d6dbdc2e5ba2de00264362a8a876dc98585bd0c
+  specs:
+    devise_token_auth (0.1.37)
+      devise (> 3.5.2, < 4.1.1)
+      rails (< 6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -24,6 +32,10 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_model_serializers (0.10.0.rc4)
+      actionpack (>= 4.0)
+      activemodel (>= 4.0)
+      railties (>= 4.0)
     activejob (5.0.0.rc1)
       activesupport (= 5.0.0.rc1)
       globalid (>= 0.3.6)
@@ -45,15 +57,12 @@ GEM
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     concurrent-ruby (1.0.2)
-    devise (4.0.3)
+    devise (4.1.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
-    devise_token_auth (0.1.37)
-      devise (> 3.5.2, < 4.1)
-      rails (< 6)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     factory_girl (4.7.0)
@@ -193,8 +202,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers (= 0.10.0.rc4)
   byebug
-  devise_token_auth
+  devise_token_auth!
   factory_girl_rails
   listen (~> 3.0.5)
   omniauth

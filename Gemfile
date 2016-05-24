@@ -7,15 +7,15 @@ gem 'rails', '>= 5.0.0.rc1', '< 5.1'
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.0'
+# Use AMS to build JSON responses
+gem 'active_model_serializers', '= 0.10.0.rc4'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Devise Token Auth for token based authentication
-gem 'devise_token_auth'
+gem 'devise_token_auth', git: 'git://github.com/lynndylanhurley/devise_token_auth.git'
 
 
 # Enable OmniAuth login through Facebook & Google
@@ -28,9 +28,6 @@ gem 'rack-cors'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

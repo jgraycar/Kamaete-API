@@ -55,7 +55,8 @@ Rails.application.configure do
   config.middleware.use Rack::Cors do
     allow do
       origins 'localhost:4200'
-      resource '*', headers: :any, methods: :any
+      resource '*', headers: :any, methods: :any,
+        expose: ['access-token', 'token-type', 'client', 'expiry', 'uid']
     end
   end
 end

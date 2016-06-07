@@ -2,3 +2,13 @@
 
 # Add new mime types for use in respond_to blocks:
 # Mime::Type.register "text/richtext", :rtf
+#
+# See https://github.com/rails-api/active_model_serializers/blob/master/docs/integrations/ember-and-json-api.md
+api_mime_types = %W(
+  application/vnd.api+json
+  text/x-json
+  application/json
+)
+
+Mime::Type.unregister :json
+Mime::Type.register 'application/vnd.api+json', :json, api_mime_types

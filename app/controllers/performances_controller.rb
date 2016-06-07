@@ -49,6 +49,6 @@ class PerformancesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def performance_params
-    params.require(:performance).permit(:title, :date)
+    params.require(:data).require(:attributes).permit(:title, :date)
   end
 end

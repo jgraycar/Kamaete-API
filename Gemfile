@@ -7,21 +7,16 @@ gem 'rails', '>= 5.0.0.rc1', '< 5.1'
 gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
-# Use AMS to build JSON responses
+
+# Use AMS to build JSON-API responses
+# Must lock at rc4; 0.10.0 doesn't allow token auth headers to be injected into
+# responses See https://github.com/lynndylanhurley/devise_token_auth/issues/600
 gem 'active_model_serializers', '= 0.10.0.rc4'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Use Devise Token Auth for token based authentication
-gem 'devise_token_auth', git: 'git://github.com/lynndylanhurley/devise_token_auth.git'
-
-
-# Enable OmniAuth login through Facebook & Google
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
+# Since there have been no releases in a while, pull gem from source to get
+# needed fixes.
+gem 'devise_token_auth', git: 'git://github.com/lynndylanhurley/devise_token_auth.git', ref: 'bc04747'
 
 # Enable Cross-Origin Resource Sharing (CORS)
 gem 'rack-cors'

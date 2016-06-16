@@ -19,3 +19,6 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Prevent local API keys and other private settings from getting tracked
+config/local_env.yml

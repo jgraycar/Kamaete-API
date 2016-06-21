@@ -49,6 +49,7 @@ class MembersController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def member_params
-    params.require(:data).require(:attributes).permit(:name)
+    ActiveModelSerializers::Deserialization.jsonapi_parse(params,
+                                                          only: [:name])
   end
 end

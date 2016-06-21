@@ -49,6 +49,7 @@ class PerformancesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def performance_params
-    params.require(:data).require(:attributes).permit(:title, :date)
+    ActiveModelSerializers::Deserialization.jsonapi_parse(
+      params, only: [:title, :date, :members])
   end
 end

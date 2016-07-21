@@ -22,7 +22,8 @@ class MembersController < ApplicationController
     if @member.save
       render json: @member, status: :created, location: @member
     else
-      render json: @member.errors, status: :unprocessable_entity
+      render json: @member, status: :unprocessable_entity,
+        serializer: ActiveModel::Serializer::ErrorSerializer
     end
   end
 
@@ -31,7 +32,8 @@ class MembersController < ApplicationController
     if @member.update(member_params)
       render json: @member
     else
-      render json: @member.errors, status: :unprocessable_entity
+      render json: @member, status: :unprocessable_entity,
+        serializer: ActiveModel::Serializer::ErrorSerializer
     end
   end
 

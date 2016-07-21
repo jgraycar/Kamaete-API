@@ -22,7 +22,8 @@ class PerformancesController < ApplicationController
     if @performance.save
       render json: @performance, status: :created, location: @performance
     else
-      render json: @performance.errors, status: :unprocessable_entity
+      render json: @performance, status: :unprocessable_entity,
+        serializer: ActiveModel::Serializer::ErrorSerializer
     end
   end
 
@@ -31,7 +32,8 @@ class PerformancesController < ApplicationController
     if @performance.update(performance_params)
       render json: @performance
     else
-      render json: @performance.errors, status: :unprocessable_entity
+      render json: @performance, status: :unprocessable_entity,
+        serializer: ActiveModel::Serializer::ErrorSerializer
     end
   end
 

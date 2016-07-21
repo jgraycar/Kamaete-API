@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 5.0.0.rc1', '< 5.1'
+gem 'rails', '~> 5.0.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 
@@ -11,12 +11,12 @@ gem 'puma', '~> 3.0'
 # responses See https://github.com/lynndylanhurley/devise_token_auth/issues/600
 #
 # Issue last verified with 0.10.1 on 06/22/16
-gem 'active_model_serializers', '= 0.10.0.rc4'
+gem 'active_model_serializers', '~> 0.10.2'
 
 # Use Devise Token Auth for token based authentication
 # Since there have been no releases in a while, pull gem from source to get
 # needed fixes.
-gem 'devise_token_auth', git: 'git://github.com/lynndylanhurley/devise_token_auth.git', ref: '8df9f88'
+gem 'devise_token_auth', '~> 0.1.38'
 
 # Enable Cross-Origin Resource Sharing (CORS)
 gem 'rack-cors'

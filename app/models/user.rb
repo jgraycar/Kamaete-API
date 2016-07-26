@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :members
   has_many :performances
+  has_many :setups
 end

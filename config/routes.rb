@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :instruments
+  resources :instrument_types
   resources :members
   resources :performances
   resources :setups

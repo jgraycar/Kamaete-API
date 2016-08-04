@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726061602) do
+ActiveRecord::Schema.define(version: 20160804105348) do
+
+  create_table "instrument_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "shape"
+    t.string   "color"
+    t.integer  "size"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_instrument_types_on_user_id"
+  end
+
+  create_table "instruments", force: :cascade do |t|
+    t.integer  "shape"
+    t.string   "label"
+    t.string   "color"
+    t.decimal  "x",          precision: 8, scale: 3
+    t.decimal  "y",          precision: 8, scale: 3
+    t.decimal  "angle",      precision: 5, scale: 2
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "size"
+  end
 
   create_table "members", force: :cascade do |t|
     t.string   "name"

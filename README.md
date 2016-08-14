@@ -1,6 +1,10 @@
-# Transitions API
+# Kamaete API
 
-This is the API for my planned transitions web application.
+This is the backend code for **[Kamaete](https://www.kamaete.com)**,
+using [Ruby on Rails 5](http://rubyonrails.org/) in API only mode.
+
+To see the source code for the frontend, check out the corresponding
+[repo](https://github.com/jgraycar/Kamaete).
 
 ## Entity-Relationship Diagram
 

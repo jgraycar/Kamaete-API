@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :stage_layouts
   resources :instruments
   resources :instrument_types
   resources :members

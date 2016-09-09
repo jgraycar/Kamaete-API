@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160804105348) do
+ActiveRecord::Schema.define(version: 20160909011203) do
 
   create_table "instrument_types", force: :cascade do |t|
     t.string   "name"
@@ -27,12 +27,14 @@ ActiveRecord::Schema.define(version: 20160804105348) do
     t.integer  "shape"
     t.string   "label"
     t.string   "color"
-    t.decimal  "x",          precision: 8, scale: 3
-    t.decimal  "y",          precision: 8, scale: 3
-    t.decimal  "angle",      precision: 5, scale: 2
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.decimal  "x",               precision: 8, scale: 3
+    t.decimal  "y",               precision: 8, scale: 3
+    t.decimal  "angle",           precision: 5, scale: 2
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.integer  "size"
+    t.integer  "stage_layout_id"
+    t.index ["stage_layout_id"], name: "index_instruments_on_stage_layout_id"
   end
 
   create_table "members", force: :cascade do |t|
@@ -65,6 +67,14 @@ ActiveRecord::Schema.define(version: 20160804105348) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_setups_on_user_id"
+  end
+
+  create_table "stage_layouts", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "performance_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["performance_id"], name: "index_stage_layouts_on_performance_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -36,6 +36,8 @@ group :development, :test do
 
   # Use Factory Girl for generating random test data
   gem 'factory_girl_rails'
+
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -44,6 +46,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'overcommit'
+  gem 'pry-rails'
 end
 
 group :production do

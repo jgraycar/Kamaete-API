@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160909011203) do
+ActiveRecord::Schema.define(version: 20160910001505) do
 
   create_table "instrument_types", force: :cascade do |t|
     t.string   "name"
@@ -61,20 +61,14 @@ ActiveRecord::Schema.define(version: 20160909011203) do
     t.index ["user_id"], name: "index_performances_on_user_id"
   end
 
-  create_table "setups", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_setups_on_user_id"
-  end
-
   create_table "stage_layouts", force: :cascade do |t|
     t.string   "name"
     t.integer  "performance_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "user_id"
     t.index ["performance_id"], name: "index_stage_layouts_on_performance_id"
+    t.index ["user_id"], name: "index_stage_layouts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

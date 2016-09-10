@@ -46,7 +46,8 @@ class StageLayoutsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_stage_layout
-    @stage_layout = StageLayout.find(params[:id], user: current_user)
+    @stage_layout = StageLayout.where(
+      id: params[:id], user: current_user).first
   end
 
   # Only allow a trusted parameter "white list" through.

@@ -46,7 +46,7 @@ class MembersController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_member
-    @member = Member.find(params[:id])
+    @member = Member.where(id: params[:id], user: current_user).first
   end
 
   # Only allow a trusted parameter "white list" through.

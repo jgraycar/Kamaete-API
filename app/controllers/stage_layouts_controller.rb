@@ -52,6 +52,6 @@ class StageLayoutsController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def stage_layout_params
     ActiveModelSerializers::Deserialization.jsonapi_parse(
-      params, only: [:title])
+      params, only: [:name])
   end
 end

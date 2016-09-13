@@ -8,6 +8,8 @@ Devise.setup do |config|
   # See: http://stackoverflow.com/q/19600905/806956
   config.navigational_formats = [:json]
 
+  config.password_length = 6..128
+
   config.allow_unconfirmed_access_for = 3.days
   config.reconfirmable = true
   config.confirm_within = 1.day

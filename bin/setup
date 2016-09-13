@@ -105,7 +105,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Setting up development database..."
-rake db:setup
+rails db:setup
 if [ $? -ne 0 ]; then
     exit
 fi

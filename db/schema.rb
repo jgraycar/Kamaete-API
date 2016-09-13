@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160910001505) do
+ActiveRecord::Schema.define(version: 20160913005759) do
 
   create_table "instrument_types", force: :cascade do |t|
     t.string   "name"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20160910001505) do
     t.datetime "updated_at",                              null: false
     t.integer  "size"
     t.integer  "stage_layout_id"
+    t.integer  "member_id"
+    t.index ["member_id"], name: "index_instruments_on_member_id"
     t.index ["stage_layout_id"], name: "index_instruments_on_stage_layout_id"
   end
 

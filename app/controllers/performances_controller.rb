@@ -46,7 +46,8 @@ class PerformancesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_performance
-    @performance = Performance.where(id: params[:id], user: current_user).take
+    @performance = Performance.where(
+      id: params[:id], user: current_user).first
   end
 
   # Only allow a trusted parameter "white list" through.

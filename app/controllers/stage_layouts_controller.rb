@@ -39,7 +39,7 @@ class StageLayoutsController < ApplicationController
 
   # DELETE /stage_layouts/1
   def destroy
-    @setup.destroy
+    @stage_layout.destroy
   end
 
   private

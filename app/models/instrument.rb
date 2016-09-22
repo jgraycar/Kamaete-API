@@ -1,6 +1,6 @@
 class Instrument < ApplicationRecord
   belongs_to :user
-  belongs_to :stage_layout
+  belongs_to :stage_layout, optional: true
   belongs_to :member, optional: true
 
   enum shape: {
@@ -11,10 +11,10 @@ class Instrument < ApplicationRecord
     rectangle: 4,
   }
 
-  def self.create_instance
+  def create_instance
     return unless self.template?
     Instrument.create(
-      shape: self.shape, size: self.size,
-      angle: self.angle, color: self.color)
+      shape: self.shape, size: self.size, kind: self.kind,
+      angle: self.angle, color: self.color, user: self.user)
   end
 end

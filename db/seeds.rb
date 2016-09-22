@@ -26,63 +26,69 @@ Member.create!([
   { name: 'Otis Redding', user: user },
 ])
 
-chu = {
-  name: 'Chu',
-  shape: 'circle',
+chu = Instrument.create!({
+  kind: 'Chu',
+  shape: Instrument.shapes['circle'],
   color: '#FFF',
+  angle: 0,
   size: 10,
   user: user,
-}
-shime = {
-  name: 'Shime',
-  shape: 'circle',
+  template: true,
+})
+shime = Instrument.create!({
+  kind: 'Shime',
+  shape: Instrument.shapes['circle'],
   color: '#FFF',
+  angle: 0,
   size: 5,
   user: user,
-}
-odaiko = {
-  name: 'Odaiko',
-  shape: 'circle',
+  template: true,
+})
+odaiko = Instrument.create!({
+  kind: 'Odaiko',
+  shape: Instrument.shapes['circle'],
   color: '#FFF',
+  angle: 0,
   size: 15,
   user: user,
-}
-upright_stand = {
-  name: 'Upright Stand',
-  shape: 'rectangle',
+  template: true,
+})
+upright_stand = Instrument.create!({
+  kind: 'Upright Stand',
+  shape: Instrument.shapes['rectangle'],
   color: '#FFF',
+  angle: 0,
   size: 3,
   user: user,
-}
-slant_stand = {
-  name: 'Slant Stand',
-  shape: 'rectangle',
+  template: true,
+})
+slant_stand = Instrument.create!({
+  kind: 'Slant Stand',
+  shape: Instrument.shapes['rectangle'],
   color: '#FFF',
+  angle: 0,
   size: 3,
   user: user,
-}
-shime_stand = {
-  name: 'Shime Stand',
-  shape: 'rectangle',
+  template: true,
+})
+shime_stand = Instrument.create!({
+  kind: 'Shime Stand',
+  shape: Instrument.shapes['rectangle'],
   color: '#FFF',
+  angle: 0,
   size: 2,
   user: user,
-}
-odaiko_stand = {
-  name: 'Odaiko Stand',
-  shape: 'rectangle',
+  template: true,
+})
+odaiko_stand = Instrument.create!({
+  kind: 'Odaiko Stand',
+  shape: Instrument.shapes['rectangle'],
   color: '#FFF',
+  angle: 0,
   size: 4,
   user: user,
-}
-InstrumentType.create!(chu)
-InstrumentType.create!(shime)
-InstrumentType.create!(odaiko)
-InstrumentType.create!(upright_stand)
-InstrumentType.create!(slant_stand)
-InstrumentType.create!(shime_stand)
-InstrumentType.create!(odaiko_stand)
-
+  template: true,
+})
 
 Performance.create!(
   title: 'San Potato Obon Festival', date: Date.today + 12.days,
@@ -96,47 +102,33 @@ Performance.create!(
 
 raimei_instruments = []
 6.times do |num|
-  raimei_instruments << {
-    label: "Chu #{num + 1}",
-    size: chu[:size],
-    shape: chu[:shape],
-    color: chu[:color],
-    x: 10,
-    y: 10,
-    angle: 0,
-  }
-  raimei_instruments << {
-    label: "Chu #{num + 1} Stand",
-    size: upright_stand[:size],
-    shape: upright_stand[:shape],
-    color: upright_stand[:color],
-    x: 10,
-    y: 10,
-    angle: 0,
-  }
+  drum = chu.create_instance
+  drum.label = "Chu #{num + 1}"
+  drum.x = 10
+  drum.y = 10
+  raimei_instruments << drum
+
+  stand = upright_stand.create_instance
+  stand.label = "Chu #{num + 1} Stand"
+  stand.x = 10
+  stand.y = 10
+  raimei_instruments << stand
 end
 2.times do |num|
-  raimei_instruments << {
-    label: "Shime #{num + 1}",
-    size: shime[:size],
-    shape: shime[:shape],
-    color: shime[:color],
-    x: 10,
-    y: 10,
-    angle: 0,
-  }
-  raimei_instruments << {
-    label: "Shime #{num + 1} Stand",
-    size: shime_stand[:size],
-    shape: shime_stand[:shape],
-    color: shime_stand[:color],
-    x: 10,
-    y: 10,
-    angle: 0,
-  }
+  drum = shime.create_instance
+  drum.label = "Shime #{num + 1}"
+  drum.x = 10
+  drum.y = 10
+  raimei_instruments << drum
+
+  stand = shime_stand.create_instance
+  stand.label = "Shime #{num + 1} Stand"
+  stand.x = 10
+  stand.y = 10
+  raimei_instruments << stand
 end
 
 StageLayout.create!(name: 'Raimei', user: user,
-  instruments: Instrument.create(raimei_instruments))
+  instruments: raimei_instruments)
 StageLayout.create!(name: 'Shingetsu', user: user)
 StageLayout.create!(name: 'Honba', user: user)

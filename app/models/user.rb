@@ -14,4 +14,10 @@ class User < ActiveRecord::Base
   def stage_layout_templates
     StageLayout.where(user: self, performance: nil)
   end
+
+  # Returns Instruments created by this user that are intended to
+  # act as templates for future instruments.
+  def instrument_templates
+    Instrument.where(user: self, template: true)
+  end
 end

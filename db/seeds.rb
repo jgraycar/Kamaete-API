@@ -28,49 +28,49 @@ Member.create!([
 
 chu = {
   name: 'Chu',
-  shape: 0,
+  shape: 'circle',
   color: '#FFF',
   size: 10,
   user: user,
 }
 shime = {
   name: 'Shime',
-  shape: 0,
+  shape: 'circle',
   color: '#FFF',
   size: 5,
   user: user,
 }
 odaiko = {
   name: 'Odaiko',
-  shape: 0,
+  shape: 'circle',
   color: '#FFF',
   size: 15,
   user: user,
 }
 upright_stand = {
   name: 'Upright Stand',
-  shape: 1,
+  shape: 'rectangle',
   color: '#FFF',
   size: 3,
   user: user,
 }
 slant_stand = {
   name: 'Slant Stand',
-  shape: 1,
+  shape: 'rectangle',
   color: '#FFF',
   size: 3,
   user: user,
 }
 shime_stand = {
   name: 'Shime Stand',
-  shape: 1,
+  shape: 'rectangle',
   color: '#FFF',
   size: 2,
   user: user,
 }
 odaiko_stand = {
   name: 'Odaiko Stand',
-  shape: 1,
+  shape: 'rectangle',
   color: '#FFF',
   size: 4,
   user: user,

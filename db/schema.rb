@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922074745) do
+ActiveRecord::Schema.define(version: 20160927013158) do
 
   create_table "instruments", force: :cascade do |t|
     t.integer  "shape"
@@ -21,12 +21,13 @@ ActiveRecord::Schema.define(version: 20160922074745) do
     t.decimal  "angle",           precision: 5, scale: 2
     t.datetime "created_at",                                              null: false
     t.datetime "updated_at",                                              null: false
-    t.integer  "size"
     t.integer  "stage_layout_id"
     t.integer  "member_id"
     t.integer  "user_id"
     t.boolean  "template",                                default: false
     t.string   "kind"
+    t.integer  "width"
+    t.integer  "height"
     t.index ["member_id"], name: "index_instruments_on_member_id"
     t.index ["stage_layout_id"], name: "index_instruments_on_stage_layout_id"
     t.index ["user_id"], name: "index_instruments_on_user_id"

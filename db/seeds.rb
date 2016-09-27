@@ -61,8 +61,8 @@ upright_stand = Instrument.create!({
   shape: Instrument.shapes['rectangle'],
   color: '#000',
   angle: 0,
-  width: 10,
-  height: 25,
+  width: 30,
+  height: 15,
   user: user,
   template: true,
 })
@@ -81,8 +81,8 @@ shime_stand = Instrument.create!({
   shape: Instrument.shapes['rectangle'],
   color: '#000',
   angle: 90,
-  width: 7,
-  height: 20,
+  width: 17,
+  height: 25,
   user: user,
   template: true,
 })
@@ -91,8 +91,8 @@ odaiko_stand = Instrument.create!({
   shape: Instrument.shapes['rectangle'],
   color: '#000',
   angle: 0,
-  width: 20,
-  height: 20,
+  width: 50,
+  height: 30,
   user: user,
   template: true,
 })

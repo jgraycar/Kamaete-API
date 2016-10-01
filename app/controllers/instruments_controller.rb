@@ -54,6 +54,6 @@ class InstrumentsController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def instrument_params
     ActiveModelSerializers::Deserialization.jsonapi_parse(params,
-      only: [:name, :color, :width, :height, :x, :y, :angle])
+      only: [:name, :kind, :shape, :color, :width, :height, :x, :y, :angle])
   end
 end

@@ -29,7 +29,7 @@ Member.create!([
 chu = Instrument.create!({
   kind: 'Chu',
   shape: Instrument.shapes['ellipse'],
-  color: '#000',
+  color: '#355aec',
   angle: 0,
   width: 23,
   height: 23,
@@ -39,17 +39,17 @@ chu = Instrument.create!({
 shime = Instrument.create!({
   kind: 'Shime',
   shape: Instrument.shapes['ellipse'],
-  color: '#000',
+  color: '#0ef400',
   angle: 0,
-  width: 17,
-  height: 17,
+  width: 14,
+  height: 14,
   user: user,
   template: true,
 })
 odaiko = Instrument.create!({
   kind: 'Odaiko',
   shape: Instrument.shapes['ellipse'],
-  color: '#000',
+  color: '#6720cc',
   angle: 0,
   width: 30,
   height: 30,
@@ -59,40 +59,40 @@ odaiko = Instrument.create!({
 upright_stand = Instrument.create!({
   kind: 'Upright Stand',
   shape: Instrument.shapes['rectangle'],
-  color: '#000',
+  color: '#811616',
   angle: 0,
-  width: 30,
-  height: 15,
+  width: 45,
+  height: 10,
   user: user,
   template: true,
 })
 slant_stand = Instrument.create!({
   kind: 'Slant Stand',
   shape: Instrument.shapes['cross'],
-  color: '#000',
-  angle: 0,
-  width: 3,
-  height: 10,
+  color: '#811616',
+  angle: 170,
+  width: 40,
+  height: 15,
   user: user,
   template: true,
 })
 shime_stand = Instrument.create!({
   kind: 'Shime Stand',
   shape: Instrument.shapes['rectangle'],
-  color: '#000',
-  angle: 90,
-  width: 17,
-  height: 25,
+  color: '#7400ff',
+  angle: 0,
+  width: 20,
+  height: 30,
   user: user,
   template: true,
 })
 odaiko_stand = Instrument.create!({
   kind: 'Odaiko Stand',
-  shape: Instrument.shapes['rectangle'],
-  color: '#000',
+  shape: Instrument.shapes['cross'],
+  color: '#811616',
   angle: 0,
-  width: 50,
-  height: 30,
+  width: 40,
+  height: 40,
   user: user,
   template: true,
 })
@@ -111,28 +111,30 @@ raimei_instruments = []
 6.times do |num|
   drum = chu.create_instance
   drum.label = "Chu #{num + 1}"
-  drum.x = 10
-  drum.y = 10
-  raimei_instruments << drum
-
   stand = upright_stand.create_instance
   stand.label = "Chu #{num + 1} Stand"
-  stand.x = 10
-  stand.y = 10
+
+  if num < 3
+    drum.x = 100 + 100 * num
+    drum.y = 300 - 40 * num
+    stand.x = 100 + 100 * num
+    stand.y = 325 - 40 * num
+  else
+    drum.x = 500 + 100 * (num - 3)
+    drum.y = 220 + 40 * (num - 3)
+    stand.x = 500 + 100 * (num - 3)
+    stand.y = 245 + 40 * (num - 3)
+  end
+
+  raimei_instruments << drum
   raimei_instruments << stand
 end
 2.times do |num|
   drum = shime.create_instance
   drum.label = "Shime #{num + 1}"
-  drum.x = 10
-  drum.y = 10
+  drum.x = 385 + 30 * num
+  drum.y = 150
   raimei_instruments << drum
-
-  stand = shime_stand.create_instance
-  stand.label = "Shime #{num + 1} Stand"
-  stand.x = 10
-  stand.y = 10
-  raimei_instruments << stand
 end
 
 StageLayout.create!(name: 'Raimei', user: user,
